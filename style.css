@@ -74,6 +74,21 @@ img {
     display: block;
 }
 
+/* Line Break Helpers */
+.nobr {
+    display: inline-block;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.pc-only {
+    display: inline;
+}
+
+.mobile-only {
+    display: none;
+}
+
 /* Scrollbar Customization */
 ::-webkit-scrollbar {
     width: 8px;
@@ -240,6 +255,11 @@ img {
 
 .site-header.scrolled .header-container {
     height: 75px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
 }
 
 .header-logo .logo-img {
@@ -594,18 +614,6 @@ img {
     transform: scale(1.04);
 }
 
-.image-note {
-    position: absolute;
-    bottom: 12px;
-    right: 15px;
-    background-color: rgba(13, 3, 8, 0.7);
-    padding: 4px 10px;
-    font-size: 0.7rem;
-    color: var(--color-text-muted);
-    letter-spacing: 0.05em;
-    border-radius: 2px;
-}
-
 /* ==========================================================================
    Features Section
    ========================================================================== */
@@ -877,17 +885,6 @@ img {
     font-size: 0.95rem;
 }
 
-.therapist-signature {
-    margin-top: 40px;
-    font-family: var(--font-en);
-    font-style: italic;
-    color: var(--color-primary);
-    font-size: 1.1rem;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    display: inline-block;
-    padding-top: 15px;
-}
-
 /* ==========================================================================
    Access & Salon Section
    ========================================================================== */
@@ -975,7 +972,6 @@ img {
 .form-group input[type="email"],
 .form-group input[type="number"],
 .form-group input[type="date"],
-.form-group input[type="time"],
 .form-group select,
 .form-group textarea {
     background-color: #12060d;
@@ -990,6 +986,16 @@ img {
     width: 100%;
 }
 
+/* 年齢入力のスピンボタン（上下矢印）を完全に非表示にする */
+#age::-webkit-outer-spin-button,
+#age::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#age {
+    -moz-appearance: textfield;
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -997,9 +1003,38 @@ img {
     box-shadow: 0 0 10px rgba(var(--color-primary-rgb), 0.15);
 }
 
+/* Booking Datetime Custom layout (日時のためのレイアウト調整) */
+.booking-datetime-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.booking-datetime-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .datetime-inputs {
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    width: 100%;
+}
+
+.datetime-inputs input[type="date"],
+.datetime-inputs select {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+    background-color: #12060d;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: var(--color-text);
+    padding: 14px 10px; /* パディングを少し減らし、はみ出しを防ぐ */
+    font-family: var(--font-ja);
+    font-size: 0.9rem;
+    outline: none;
 }
 
 .form-note {
@@ -1233,9 +1268,16 @@ img {
     .grid-3col {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .booking-datetime-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
     .flow-steps::before {
         left: 35px;
     }
+    
     .flow-step-number {
         width: 70px;
         height: 70px;
@@ -1296,6 +1338,10 @@ img {
         margin-top: 30px;
     }
     
+    .mobile-only {
+        display: inline;
+    }
+    
     /* Flow */
     .flow-steps::before {
         left: 20px;
@@ -1330,7 +1376,7 @@ img {
     }
     
     .datetime-inputs {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row; /* スマホでも横並びを維持するが、1列化により十分な横幅が確保される */
+        gap: 8px;
     }
 }

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drop（ドロップ） | 女性向けメンズセラピストのアロマリンパマッサージサロン</title>
-    <meta name="description" content="渋谷・新宿・秋葉原の完全個室プライベートサロン＆出張対応。厳選されたアロマオイルと、洗練された男性セラピストによる温かく繊細なタッチで、女性の心と身体を深く解きほぐす至福のトリートメントをご提供いたします。">
+    <meta name="description" content="渋谷・新宿・秋葉原・横浜の完全個室プライベートサロン＆出張対応。厳選されたアロマオイルと、洗練された男性セラピストによる温かく繊細なタッチで、女性の心と身体を深く解きほぐす至福のトリートメントをご提供いたします。">
     
     <!-- Open Graph (SNS用) -->
     <meta property="og:title" content="Drop（ドロップ） | 女性向けメンズセラピストのアロマリンパマッサージサロン">
-    <meta property="og:description" content="洗練された男性セラピストによる極上のアロマリンパマッサージ。都内プライベートサロン＆出張サービスで至福の癒やしを。">
+    <meta property="og:description" content="洗練された男性セラピストによる極上のアロマリンパマッサージ。都内・横浜プライベートサロン＆出張サービスで至福の癒やしを。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://drop-oil.github.io/">
     
@@ -17,11 +17,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome (アイコン用) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome (Xアイコン等のため、v6.5.1へアップデート) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/サロンロゴ画像.png">
+    <link rel="icon" type="image/png" href="images/サロンロゴ2.png">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -32,7 +32,7 @@
     <header class="site-header" id="site-header">
         <div class="header-container">
             <a href="#" class="header-logo">
-                <img src="images/サロンロゴ画像.png" alt="Drop Logo" class="logo-img">
+                <img src="images/サロンロゴ2.png" alt="Drop Logo" class="logo-img">
             </a>
             
             <nav class="nav-desktop">
@@ -77,7 +77,6 @@
     <!-- ヒーローセクション (背景スライドショー) -->
     <section class="hero-section" id="hero">
         <div class="hero-slideshow">
-            <!-- 複数のスライド画像を重ねてJS/CSSで切り替え -->
             <div class="slide active" style="background-image: url('images/サロンイメージ.png');"></div>
             <div class="slide" style="background-image: url('images/オイルイメージ.png');"></div>
             <div class="slide" style="background-image: url('images/施術イメージ2.png');"></div>
@@ -88,8 +87,8 @@
         <div class="hero-content fade-in-up">
             <span class="hero-subtitle">Aromatherapy & Lymphatic Massage</span>
             <h1 class="hero-title">
-                心と体を溶かす<br>
-                女性のための極上アロマ
+                <span class="nobr">心と体を溶かす</span><br class="pc-only">
+                <span class="nobr">女性のための極上アロマ</span>
             </h1>
             <p class="hero-desc">
                 日常から解き放たれ、素肌でリラックスする贅沢な心地よさ。<br>
@@ -114,7 +113,10 @@
         <div class="container">
             <div class="section-title-wrap text-center scroll-fade">
                 <span class="section-subtitle">Our Concept</span>
-                <h2 class="section-title">女性の心と体を満たす、オーダーメイドのトリートメント</h2>
+                <h2 class="section-title">
+                    <span class="nobr">女性の心と体を満たす、</span><br class="mobile-only">
+                    <span class="nobr">オーダーメイドのトリートメント</span>
+                </h2>
                 <div class="title-line"></div>
             </div>
             
@@ -131,8 +133,7 @@
                     <p>当店では、初めての方でも安心して心地よさに身を預けていただけるよう、施術前に丁寧なカウンセリングを実施しています。ご相談いただいた内容をもとに、完全オーダーメイドの施術プランをご提案いたします。</p>
                 </div>
                 <div class="concept-image scroll-fade image-mask">
-                    <img src="images/カウンセリングイメージ.png" alt="カウンセリングの様子" class="img-responsive">
-                    <div class="image-note">※画像は施術のイメージです</div>
+                    <img src="images/施術イメージ2.png" alt="アロマオイルトリートメント" class="img-responsive">
                 </div>
             </div>
         </div>
@@ -164,7 +165,7 @@
                 <!-- 特徴2 -->
                 <div class="feature-card scroll-fade">
                     <div class="feature-img-wrapper">
-                        <img src="images/セラピストイメージ.png" alt="洗練された男性セラピスト" class="feature-img">
+                        <img src="images/セラピスト2.jpg" alt="洗練された男性セラピスト" class="feature-img">
                     </div>
                     <div class="feature-content">
                         <span class="feature-num">02</span>
@@ -176,7 +177,7 @@
                 <!-- 特徴3 -->
                 <div class="feature-card scroll-fade">
                     <div class="feature-img-wrapper">
-                        <img src="images/施術イメージ4.png" alt="特別なアロママッサージ" class="feature-img">
+                        <img src="images/お客様要望イメージ2.jpg" alt="特別なアロママッサージ" class="feature-img">
                     </div>
                     <div class="feature-content">
                         <span class="feature-num">03</span>
@@ -184,9 +185,6 @@
                         <p>深部リンパへとじっくり働きかけ、疲労の解放はもちろん、バストラインの引き上げや女性ホルモンの活性化をやさしく促します。素肌を優しく滑る手の滑らかさが、女性としての本来の輝きと美しさを呼び起こします。</p>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-4 scroll-fade">
-                <p class="text-muted text-small">※掲載している画像はすべてイメージビジュアルです。実際のサロンの様子とは多少異なる場合がございますが、極上の癒やしをお約束いたします。</p>
             </div>
         </div>
     </section>
@@ -276,7 +274,7 @@
                     <div class="flow-step-number">03</div>
                     <div class="flow-step-content">
                         <h3 class="flow-step-h3">アロマオイルトリートメント</h3>
-                        <p>施術はうつ伏せ（背面）からゆっくりと始まり、仰向け（前面）まで全身をカバーします。厳選されたアロマオイルの香りに包まれながら、手のひら全体のぬくもりを密着させたスウェディッシュ調のトリートメントで、全身のリンパを深く優しく解きほぐしていきます。</p>
+                        <p>施術はうつ伏せ（背面）からゆっくりと始まり、仰向け（前面）まで全身をカバーします。厳選されたアロマオイルの香りに包まれながら、手のひら全体のぬくもりを密着させたスウェディッシュ調 of トリートメントで、全身のリンパを深く優しく解きほぐしていきます。</p>
                     </div>
                 </div>
             </div>
@@ -294,8 +292,7 @@
             
             <div class="grid grid-2col therapist-profile-wrap scroll-fade">
                 <div class="therapist-image-box image-mask">
-                    <img src="images/セラピストイメージ.png" alt="メンズセラピスト" class="img-responsive">
-                    <div class="image-note">※施術は1対1のマンツーマンで行います</div>
+                    <img src="images/セラピストイメージ2.png" alt="メンズセラピスト" class="img-responsive">
                 </div>
                 <div class="therapist-info">
                     <span class="therapist-title">Owner Therapist</span>
@@ -304,9 +301,6 @@
                     <div class="therapist-desc">
                         <p>整体サロンや出張エステなど、様々な現場で数多くの施術を重ねてまいりました。確かな技術力はもちろん、女性のお客様が不安なくリラックスできるよう、「誠実さ・清潔感・紳士的な優しさ」を最も大切にしております。</p>
                         <p>手のひらの温もりを感じる心地よい圧で、美肌・デトックス効果から、女性ホルモンの活性化やバストラインの引き上げまでをケアします。「心がときめき、体と緊張がとろけていく」ような、甘く贅沢なひとときをぜひご体感ください。</p>
-                    </div>
-                    <div class="therapist-signature">
-                        <span>Pure Relaxation & Hospitality</span>
                     </div>
                 </div>
             </div>
@@ -324,8 +318,8 @@
             
             <div class="grid grid-2col access-content scroll-fade">
                 <div class="access-info">
-                    <h3 class="access-h3"><i class="fa-solid fa-location-dot"></i> 都内4箇所の貸切サロン</h3>
-                    <p>当サロンは、お客様のご希望に合わせて **渋谷・秋葉原・新宿** の各駅近くにあるレンタルプライベートサロンにて施術を行っております。</p>
+                    <h3 class="access-h3"><i class="fa-solid fa-location-dot"></i> 都内・横浜の貸切サロン</h3>
+                    <p>当サロンは、お客様のご希望に合わせて **渋谷・秋葉原・新宿・横浜** の各駅近くにあるレンタルプライベートサロンにて施術を行っております。</p>
                     <p>完全貸切のマンツーマン空間ですので、他のお客様と顔を合わせることはありません。静かでリラックスした時間をご提供いたします。</p>
                     <p class="text-important">※プライベートサロンの都合上、詳細な住所はご予約確定後にお伝えいたします。ご希望の駅近エリアをご予約時にお知らせください。</p>
                     <p>道案内も丁寧に行います。また、ご不安な場合は最寄り駅までお迎えにあがることも可能ですので、安心してお越しください。</p>
@@ -336,7 +330,7 @@
                     <ul class="area-list">
                         <li><strong>出張対応エリア：</strong> 東京都、神奈川県、千葉県、埼玉県（その他の地域もご相談ください）</li>
                     </ul>
-                    <p>折りたたみ式の施術用ベッド、シーツ、アロマオイルなどはすべて持参いたしますので、お客様にご用意いただくものはございません。お気軽にご相談ください。</p>
+                    <p>シーツ、アロマオイルなどはすべて持参いたしますので、お客様にご用意いただくものはございません。お気軽にご相談ください。</p>
                 </div>
             </div>
         </div>
@@ -356,16 +350,13 @@
                 <!-- 
                   FormSubmit.co を使用
                   送信先アドレス: drop.aromaoil@gmail.com
-                  スパム対策・完了画面リダイレクトを設定
                 -->
                 <form action="https://formsubmit.co/drop.aromaoil@gmail.com" method="POST" class="reserve-form" id="reserve-form">
                     
                     <!-- FormSubmit設定用隠しフィールド -->
                     <input type="hidden" name="_subject" value="【ドロップ】新規ご予約・お問合せ">
                     <input type="hidden" name="_template" value="table">
-                    <!-- 送信後のリダイレクト先（Github Pagesのトップへ戻す） -->
                     <input type="hidden" name="_next" value="https://drop-oil.github.io/?status=success#reserve">
-                    <!-- スパム防止のハニーポット -->
                     <input type="text" name="_honey" style="display:none">
                     
                     <div class="form-row grid grid-2col">
@@ -377,6 +368,7 @@
                                 <option value="渋谷エリアサロン">渋谷エリアサロン</option>
                                 <option value="新宿エリアサロン">新宿エリアサロン</option>
                                 <option value="秋葉原エリアサロン">秋葉原エリアサロン</option>
+                                <option value="横浜エリアサロン">横浜エリアサロン</option>
                                 <option value="出張サービス">出張サービス</option>
                                 <option value="その他">その他</option>
                             </select>
@@ -394,33 +386,117 @@
                         </div>
                     </div>
                     
-                    <div class="form-row grid grid-3col">
+                    <!-- 日時入力エリア (レイアウトはCSSで最適化) -->
+                    <div class="form-row booking-datetime-container">
                         <!-- 第1希望日時 -->
-                        <div class="form-group">
+                        <div class="booking-datetime-group">
                             <label for="date1" class="required">第1希望日時</label>
                             <div class="datetime-inputs">
                                 <input type="date" name="第1希望日" id="date1" required>
-                                <input type="time" name="第1希望時間" id="time1" required>
+                                <select name="第1希望時間" id="time1" required>
+                                    <option value="" disabled selected>時間を選択</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="21:30">21:30</option>
+                                    <option value="22:00">22:00</option>
+                                </select>
                             </div>
                         </div>
+                        
                         <!-- 第2希望日時 -->
-                        <div class="form-group">
+                        <div class="booking-datetime-group">
                             <label for="date2">第2希望日時</label>
                             <div class="datetime-inputs">
                                 <input type="date" name="第2希望日" id="date2">
-                                <input type="time" name="第2希望時間" id="time2">
+                                <select name="第2希望時間" id="time2">
+                                    <option value="" disabled selected>時間を選択</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="21:30">21:30</option>
+                                    <option value="22:00">22:00</option>
+                                </select>
                             </div>
                         </div>
+                        
                         <!-- 第3希望日時 -->
-                        <div class="form-group">
+                        <div class="booking-datetime-group">
                             <label for="date3">第3希望日時</label>
                             <div class="datetime-inputs">
                                 <input type="date" name="第3希望日" id="date3">
-                                <input type="time" name="第3希望時間" id="time3">
+                                <select name="第3希望時間" id="time3">
+                                    <option value="" disabled selected>時間を選択</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="21:30">21:30</option>
+                                    <option value="22:00">22:00</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-                    <p class="form-note">※スムーズなご案内のため、なるべく第2、第3希望日時もご記入ください。</p>
+                    <p class="form-note">※スムーズなご案内のため、なるべく第2、第3希望日時もご選択ください。</p>
                     
                     <div class="form-row grid grid-3col">
                         <!-- お名前 -->
@@ -438,7 +514,7 @@
                         <!-- 年齢 -->
                         <div class="form-group">
                             <label for="age" class="required">年齢</label>
-                            <input type="number" name="年齢" id="age" min="18" max="100" placeholder="半角数字でご記入ください" required>
+                            <input type="text" name="年齢" id="age" inputmode="numeric" pattern="[0-9]*" placeholder="半角数字で入力" required>
                         </div>
                     </div>
                     
@@ -448,7 +524,7 @@
                         <textarea name="備考・ご要望" id="message" rows="5" placeholder="出張サービスをご希望の場合は出張先エリアや詳細、アレルギーの有無など、その他ご要望がございましたらご自由にご記入ください。"></textarea>
                     </div>
                     
-                    <!-- 送信完了メッセージエリア (JSで成功時に表示) -->
+                    <!-- 送信完了メッセージエリア -->
                     <div class="form-status" id="form-status"></div>
                     
                     <!-- 送信ボタン -->
@@ -486,7 +562,7 @@
         <div class="container">
             <div class="footer-top grid grid-3col">
                 <div class="footer-brand">
-                    <img src="images/サロンロゴ画像.png" alt="Drop Logo" class="footer-logo-img">
+                    <img src="images/サロンロゴ2.png" alt="Drop Logo" class="footer-logo-img">
                     <p class="footer-slogan">心がときめき、体がとろける甘く深い癒やしを。</p>
                 </div>
                 <div class="footer-links">
