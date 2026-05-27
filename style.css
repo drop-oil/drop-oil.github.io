@@ -1382,37 +1382,27 @@ img {
         padding-top: 75px; /* スマホ用ヘッダー高さ(75px)に合わせる */
     }
     
-    /* ヒーローコンテンツ内の要素間余白を狭めて縦被りを防止 */
+    /* ヒーローコンテンツ内の要素間余白とフォントサイズを元の美しい状態へ戻す */
     .hero-subtitle {
-        margin-bottom: 12px;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-    
-    .hero-desc {
         margin-bottom: 25px;
     }
     
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .hero-desc {
+        margin-bottom: 45px;
+    }
+    
     .hero-content {
-        margin-top: 10px;
+        margin-top: 60px; /* 元のPC時と同じ十分な上部マージンに戻す */
     }
     
-    /* スクロールインジケーターを下げ、要素と被らないように縮小 */
+    /* 被りの原因となるスクロール矢印は、スマホ表示時は非表示にして上部レイアウトを守る */
     .scroll-indicator {
-        bottom: 15px;
-    }
-    
-    .scroll-indicator .mouse {
-        width: 16px;
-        height: 28px;
-    }
-    
-    .scroll-indicator .wheel {
-        height: 6px;
-        top: 4px;
+        display: none;
     }
     
     /* Concept */
