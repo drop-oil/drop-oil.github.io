@@ -285,17 +285,17 @@ img {
 
 .nav-desktop .nav-list {
     display: flex;
-    gap: 18px; /* 35pxから18pxに縮小し、タブレット幅での改行を防止 */
+    gap: 15px; /* 18pxから15pxにさらに微調整 */
 }
 
 .nav-desktop .nav-list a {
     font-family: var(--font-en);
-    font-size: 0.8rem; /* 0.95remから0.8rem(1pt相当)に縮小 */
-    letter-spacing: 0.05em; /* 文字間を少し詰める */
+    font-size: 0.78rem; /* さらにわずかに小さくし、文字の改行を完全に防ぐ */
+    letter-spacing: 0.02em; /* 文字間を詰め、スッキリと並べる */
     text-transform: uppercase;
     position: relative;
     padding: 10px 0;
-    white-space: nowrap; /* テキストの改行を禁止 */
+    white-space: nowrap;
 }
 
 .nav-desktop .nav-list a::after {
@@ -364,16 +364,26 @@ img {
 
 .nav-mobile ul {
     text-align: center;
+    width: 100%;
+    padding: 0 30px;
 }
 
 .nav-mobile ul li {
-    margin: 30px 0;
+    margin: 25px 0;
 }
 
 .nav-mobile ul li a {
     font-family: var(--font-ja);
-    font-size: 1.25rem; /* 1.4remから1.25remに縮小 */
-    letter-spacing: 0.08em; /* 文字間を少し詰める */
+    font-size: 1.15rem; /* 1.25remから1.15remに1ポイント縮小 */
+    letter-spacing: 0.05em; /* 文字間を少し詰める */
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.nav-mobile .btn {
+    padding: 12px 24px; /* モバイルでの改行を防ぐため、ボタンのパディングを減らす */
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 /* Hamburger active transformation */
@@ -938,7 +948,7 @@ img {
 .area-list li {
     font-size: 0.95rem;
     margin-bottom: 10px;
-    color: var(--color-text); /* 薄文字から白（ベーステキスト色）へ変更 */
+    color: var(--color-text);
 }
 
 .area-list li strong {
@@ -1300,6 +1310,38 @@ img {
 /* ==========================================================================
    Responsive Media Queries
    ========================================================================== */
+/* 
+  ブレイクポイントを 768px から 992px に引き上げ、
+  タブレット幅（中画面）でも自動的にスッキリしたモバイルレイアウト（ハンバーガーメニュー等）にする修正
+*/
+@media (max-width: 992px) {
+    /* Header & Navigation */
+    .nav-desktop, .header-cta {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    /* スマホ・タブレットでヘッダーロゴ画像サイズを縮小、改行や縦崩れを防止 */
+    .header-logo .logo-img {
+        height: 44px; /* 55pxから縮小 */
+    }
+    
+    .site-header.scrolled .logo-img {
+        height: 38px; /* 48pxから縮小 */
+    }
+    
+    .header-container {
+        height: 75px;
+    }
+    
+    .site-header.scrolled .header-container {
+        height: 65px;
+    }
+}
+
 @media (max-width: 1024px) {
     .grid-3col {
         grid-template-columns: repeat(2, 1fr);
@@ -1332,32 +1374,6 @@ img {
     .grid-2col, .grid-3col {
         grid-template-columns: 1fr;
         gap: 30px;
-    }
-    
-    /* Header & Navigation */
-    .nav-desktop, .header-cta {
-        display: none;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    /* スマホでヘッダーロゴ画像サイズを縮小、改行や縦崩れを防ぐ */
-    .header-logo .logo-img {
-        height: 44px; /* 55pxから縮小 */
-    }
-    
-    .site-header.scrolled .logo-img {
-        height: 38px; /* 48pxから縮小 */
-    }
-    
-    .header-container {
-        height: 75px;
-    }
-    
-    .site-header.scrolled .header-container {
-        height: 65px;
     }
     
     /* Hero */
