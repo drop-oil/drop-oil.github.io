@@ -285,13 +285,13 @@ img {
 
 .nav-desktop .nav-list {
     display: flex;
-    gap: 15px; /* 18pxから15pxにさらに微調整 */
+    gap: 15px;
 }
 
 .nav-desktop .nav-list a {
     font-family: var(--font-en);
-    font-size: 0.78rem; /* さらにわずかに小さくし、文字の改行を完全に防ぐ */
-    letter-spacing: 0.02em; /* 文字間を詰め、スッキリと並べる */
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     position: relative;
     padding: 10px 0;
@@ -374,14 +374,14 @@ img {
 
 .nav-mobile ul li a {
     font-family: var(--font-ja);
-    font-size: 1.15rem; /* 1.25remから1.15remに1ポイント縮小 */
-    letter-spacing: 0.05em; /* 文字間を少し詰める */
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
     white-space: nowrap;
     display: inline-block;
 }
 
 .nav-mobile .btn {
-    padding: 12px 24px; /* モバイルでの改行を防ぐため、ボタンのパディングを減らす */
+    padding: 12px 24px;
     font-size: 0.85rem;
     white-space: nowrap;
 }
@@ -411,6 +411,7 @@ img {
     align-items: center;
     text-align: center;
     overflow: hidden;
+    padding-top: 90px; /* 固定ヘッダー（高さ90px）の下に文字が潜り込まないようにクリアランスを確保 */
 }
 
 .hero-slideshow {
@@ -458,7 +459,7 @@ img {
     z-index: 4;
     max-width: 800px;
     padding: 0 20px;
-    margin-top: 60px;
+    margin-top: 20px; /* padding-topで余白を取ったため、マージンを減らしバランスを調整 */
 }
 
 .hero-subtitle {
@@ -1311,7 +1312,7 @@ img {
    Responsive Media Queries
    ========================================================================== */
 /* 
-  ブレイクポイントを 768px から 992px に引き上げ、
+  ブレイクポイントを 992px に引き上げ、
   タブレット幅（中画面）でも自動的にスッキリしたモバイルレイアウト（ハンバーガーメニュー等）にする修正
 */
 @media (max-width: 992px) {
@@ -1377,6 +1378,14 @@ img {
     }
     
     /* Hero */
+    .hero-section {
+        padding-top: 75px; /* スマホ用ヘッダー高さ(75px)に合わせる */
+    }
+    
+    .hero-content {
+        margin-top: 20px; /* スマホ画面高さに対するマージンを微調整 */
+    }
+    
     .hero-title {
         font-size: 2.2rem;
     }
