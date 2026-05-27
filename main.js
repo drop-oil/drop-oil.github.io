@@ -202,4 +202,15 @@ document.addEventListener('DOMContentLoaded', () => {
             input.setAttribute('min', todayStr);
         }
     });
+
+    /* ==========================================================================
+       9. Q&A Accordion Toggle (秘密のQ&A開閉制御)
+       ========================================================================== */
+    const qaQuestions = document.querySelectorAll('.qa-question');
+    qaQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            item.classList.toggle('active');
+        });
+    });
 });

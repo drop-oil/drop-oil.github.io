@@ -233,16 +233,17 @@ img {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(20, 7, 13, 0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-    transition: var(--transition-fast);
+    background: transparent; /* スクロール前は完全に透明化 */
+    border-bottom: 1px solid transparent; /* スクロール前は線も非表示 */
+    transition: var(--transition-smooth); /* 滑らかなトランジション */
 }
 
 .site-header.scrolled {
     padding: 5px 0;
-    background: rgba(13, 3, 8, 0.95);
+    background: rgba(13, 3, 8, 0.96); /* スクロール後は深みのあるワインブラック */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25); /* スクロール後に上品なゴールド線を出す */
     box-shadow: 0 5px 25px rgba(0,0,0,0.5);
 }
 
@@ -439,7 +440,7 @@ img {
 }
 
 .hero-slideshow .slide.active {
-    opacity: 0.28; /* 暗くエレガントにするため、画像の不透明度をかなり低く抑える */
+    opacity: 0.65; /* 背景画像を綺麗に表示させるために不透明度をアップ */
     z-index: 2;
     transform: scale(1);
 }
@@ -450,8 +451,8 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    /* ワインレッドから極暗紫へのなだらかなグラデーションを重ねる */
-    background: linear-gradient(135deg, rgba(20, 7, 13, 0.85) 0%, rgba(13, 3, 8, 0.98) 100%);
+    /* ワインレッドの透過度を下げて、画像が美しく浮かび上がるように調整 */
+    background: linear-gradient(135deg, rgba(20, 7, 13, 0.65) 0%, rgba(13, 3, 8, 0.85) 100%);
     z-index: 3;
 }
 
@@ -1494,5 +1495,269 @@ img {
     .datetime-inputs {
         flex-direction: row;
         gap: 8px;
+    }
+}
+
+/* ==========================================================================
+   Secret & Sensual Content Enhancements (五感の覚醒・秘密のQ&A)
+   ========================================================================== */
+.secret-section {
+    background: linear-gradient(180deg, var(--color-bg-darker) 0%, #1c0812 50%, var(--color-bg) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.secret-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.secret-row {
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.secret-text .secret-badge {
+    display: inline-block;
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 4px 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.secret-text p {
+    font-size: 1rem;
+    line-height: 2.1;
+    color: var(--color-text-muted);
+    margin-bottom: 25px;
+}
+
+.secret-highlight-box {
+    border-left: 2px solid var(--color-primary);
+    padding-left: 20px;
+    margin: 35px 0;
+    background: rgba(212, 175, 55, 0.02);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.secret-highlight-box h4 {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.secret-highlight-box p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* Secret Q&A Section */
+.qa-section {
+    background-color: var(--color-bg);
+}
+
+.qa-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.qa-item {
+    background-color: var(--color-bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.08);
+    margin-bottom: 20px;
+    transition: var(--transition-smooth);
+}
+
+.qa-item:hover {
+    border-color: rgba(212, 175, 55, 0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.qa-question {
+    padding: 24px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--color-primary);
+}
+
+.qa-question::before {
+    content: 'Q.';
+    font-family: var(--font-en);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-right: 12px;
+}
+
+.qa-toggle-icon {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    color: var(--color-text-muted);
+}
+
+.qa-item.active .qa-toggle-icon {
+    transform: rotate(180deg);
+    color: var(--color-primary);
+}
+
+.qa-answer {
+    display: none; /* デフォルト非表示 */
+    padding: 20px 30px 24px 30px;
+    border-top: 1px dashed rgba(212, 175, 55, 0.1);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--color-text-muted);
+}
+
+.qa-item.active .qa-answer {
+    display: flex; /* アクティブ時に表示 */
+}
+
+.qa-answer::before {
+    content: 'A.';
+    font-family: var(--font-en);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.qa-answer-text {
+    flex-grow: 1;
+}
+
+/* Reviews Page Styles */
+.reviews-hero {
+    height: 45vh;
+    min-height: 350px;
+}
+
+.review-list-section {
+    padding: 80px 0;
+}
+
+.review-card {
+    background-color: var(--color-bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.08);
+    padding: 40px;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.15);
+    padding-bottom: 15px;
+}
+
+.review-user-info h4 {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 4px;
+}
+
+.review-user-info span {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.review-stars {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.review-course-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    background-color: rgba(212, 175, 55, 0.08);
+    padding: 4px 10px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+.review-title-text {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.review-body {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--color-text-muted);
+}
+
+/* Call-to-action for reviews on LP */
+.lp-review-cta {
+    background: linear-gradient(135deg, #1c0812 0%, #26111d 100%);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 60px;
+    text-align: center;
+    max-width: 900px;
+    margin: 50px auto 0;
+}
+
+.lp-review-cta h3 {
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.lp-review-cta p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .lp-review-cta {
+        padding: 40px 20px;
+    }
+    .review-card {
+        padding: 25px;
+    }
+    .qa-question {
+        padding: 18px 20px;
+        font-size: 0.95rem;
+    }
+    .qa-answer {
+        padding: 0 20px 18px 20px;
+        font-size: 0.88rem;
     }
 }
