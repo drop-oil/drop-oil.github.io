@@ -142,8 +142,12 @@ img {
     margin-top: 40px;
 }
 
+.text-white {
+    color: var(--color-text) !important;
+}
+
 .text-muted {
-    color: var(--color-text-muted);
+    color: var(--color-text-muted) !important;
 }
 
 .text-small {
@@ -250,6 +254,7 @@ img {
     max-width: 1300px;
     margin: 0 auto;
     height: 90px;
+    flex-wrap: nowrap;
     transition: var(--transition-fast);
 }
 
@@ -260,6 +265,7 @@ img {
 .header-logo {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .header-logo .logo-img {
@@ -273,18 +279,23 @@ img {
     height: 48px;
 }
 
+.nav-desktop {
+    margin: 0 15px;
+}
+
 .nav-desktop .nav-list {
     display: flex;
-    gap: 35px;
+    gap: 18px; /* 35pxから18pxに縮小し、タブレット幅での改行を防止 */
 }
 
 .nav-desktop .nav-list a {
     font-family: var(--font-en);
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
+    font-size: 0.8rem; /* 0.95remから0.8rem(1pt相当)に縮小 */
+    letter-spacing: 0.05em; /* 文字間を少し詰める */
     text-transform: uppercase;
     position: relative;
     padding: 10px 0;
+    white-space: nowrap; /* テキストの改行を禁止 */
 }
 
 .nav-desktop .nav-list a::after {
@@ -302,9 +313,14 @@ img {
     width: 100%;
 }
 
+.header-cta {
+    flex-shrink: 0;
+}
+
 .btn-header {
-    padding: 10px 24px;
+    padding: 10px 20px;
     font-size: 0.8rem;
+    white-space: nowrap;
 }
 
 /* Hamburger Button */
@@ -356,8 +372,8 @@ img {
 
 .nav-mobile ul li a {
     font-family: var(--font-ja);
-    font-size: 1.4rem;
-    letter-spacing: 0.15em;
+    font-size: 1.25rem; /* 1.4remから1.25remに縮小 */
+    letter-spacing: 0.08em; /* 文字間を少し詰める */
 }
 
 /* Hamburger active transformation */
@@ -922,7 +938,7 @@ img {
 .area-list li {
     font-size: 0.95rem;
     margin-bottom: 10px;
-    color: var(--color-text-muted);
+    color: var(--color-text); /* 薄文字から白（ベーステキスト色）へ変更 */
 }
 
 .area-list li strong {
@@ -1003,7 +1019,7 @@ img {
     box-shadow: 0 0 10px rgba(var(--color-primary-rgb), 0.15);
 }
 
-/* Booking Datetime Custom layout (日時のためのレイアウト調整) */
+/* Booking Datetime Custom layout */
 .booking-datetime-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1031,10 +1047,30 @@ img {
     background-color: #12060d;
     border: 1px solid rgba(212, 175, 55, 0.25);
     color: var(--color-text);
-    padding: 14px 10px; /* パディングを少し減らし、はみ出しを防ぐ */
+    padding: 14px 10px;
     font-family: var(--font-ja);
     font-size: 0.9rem;
     outline: none;
+}
+
+/* 
+  日付ボックスのどこを押してもカレンダーが開くようにする修正
+  カレンダーピッカーの起動インジケーター（アイコン）の領域を全体に広げて透明化
+*/
+.datetime-inputs input[type="date"] {
+    position: relative;
+    cursor: pointer;
+}
+
+.datetime-inputs input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
 }
 
 .form-note {
@@ -1307,6 +1343,23 @@ img {
         display: block;
     }
     
+    /* スマホでヘッダーロゴ画像サイズを縮小、改行や縦崩れを防ぐ */
+    .header-logo .logo-img {
+        height: 44px; /* 55pxから縮小 */
+    }
+    
+    .site-header.scrolled .logo-img {
+        height: 38px; /* 48pxから縮小 */
+    }
+    
+    .header-container {
+        height: 75px;
+    }
+    
+    .site-header.scrolled .header-container {
+        height: 65px;
+    }
+    
     /* Hero */
     .hero-title {
         font-size: 2.2rem;
@@ -1376,7 +1429,7 @@ img {
     }
     
     .datetime-inputs {
-        flex-direction: row; /* スマホでも横並びを維持するが、1列化により十分な横幅が確保される */
+        flex-direction: row;
         gap: 8px;
     }
 }
