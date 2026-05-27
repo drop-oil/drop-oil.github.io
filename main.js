@@ -186,4 +186,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    /* ==========================================================================
+       8. Date Picker Past Date Restriction (カレンダーでの過去日選択不可対応)
+       ========================================================================== */
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    const todayStr = `${yyyy}-${mm}-${dd}`;
+
+    ['date1', 'date2', 'date3'].forEach(id => {
+        const input = document.getElementById(id);
+        if (input) {
+            input.setAttribute('min', todayStr);
+        }
+    });
 });

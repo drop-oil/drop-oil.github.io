@@ -412,6 +412,7 @@ img {
     text-align: center;
     overflow: hidden;
     padding-top: 90px; /* 固定ヘッダーの下に文字が潜り込まないようにクリアランスを確保 */
+    padding-bottom: 90px; /* スクロール矢印との被りを防ぐためのクリアランス */
 }
 
 .hero-slideshow {
@@ -499,12 +500,60 @@ img {
     justify-content: center;
 }
 
-/* 
-  スクロール矢印（スクロールインジケーター）はPC・スマホ問わず、
-  ボタン等の要素との被り（特にウィンドウ縦幅が狭い場合）を防ぐために完全に非表示にします。
-*/
+/* Scroll Down Indicator */
 .scroll-indicator {
-    display: none !important;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8;
+    transition: var(--transition-smooth);
+}
+
+.scroll-indicator span {
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+}
+
+.scroll-indicator .mouse {
+    width: 20px;
+    height: 35px;
+    border: 1px solid var(--color-text-muted);
+    border-radius: 15px;
+    position: relative;
+}
+
+.scroll-indicator .wheel {
+    width: 2px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 1px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel-anim 1.8s infinite;
+}
+
+@keyframes scroll-wheel-anim {
+    0% {
+        top: 6px;
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        top: 18px;
+        opacity: 0;
+    }
 }
 
 /* ==========================================================================
@@ -1336,6 +1385,11 @@ img {
     /* Hero */
     .hero-section {
         padding-top: 75px; /* スマホ用ヘッダー高さ(75px)に合わせる */
+        padding-bottom: 60px; /* スマホ用スクロール矢印の被り防止 */
+    }
+    
+    .scroll-indicator {
+        bottom: 15px;
     }
     
     /* ヒーローコンテンツ内の要素間余白とフォントサイズを元の美しい状態へ戻す */
