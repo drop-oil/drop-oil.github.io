@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (submitStatus === 'success') {
         if (formStatus) {
             formStatus.classList.add('success');
-            formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> 予約リクエストが送信されました！FormSubmitからの連携承認メール、またはセラピストからの返信をお待ちください。';
+            formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> 予約リクエストの送信を承りました。セラピストからの返信をお待ちください。';
             formStatus.style.display = 'block';
             
             // 予約フォームセクションまで自動スクロール
