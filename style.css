@@ -1382,29 +1382,37 @@ img {
         padding-top: 75px; /* スマホ用ヘッダー高さ(75px)に合わせる */
     }
     
-    .hero-content {
-        margin-top: 20px; /* スマホ画面高さに対するマージンを微調整 */
+    /* ヒーローコンテンツ内の要素間余白を狭めて縦被りを防止 */
+    .hero-subtitle {
+        margin-bottom: 12px;
     }
     
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
     
     .hero-desc {
-        font-size: 0.95rem;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
     }
     
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+    .hero-content {
+        margin-top: 10px;
     }
     
-    .btn-large {
-        width: 100%;
-        max-width: 320px;
-        padding: 15px 30px;
+    /* スクロールインジケーターを下げ、要素と被らないように縮小 */
+    .scroll-indicator {
+        bottom: 15px;
+    }
+    
+    .scroll-indicator .mouse {
+        width: 16px;
+        height: 28px;
+    }
+    
+    .scroll-indicator .wheel {
+        height: 6px;
+        top: 4px;
     }
     
     /* Concept */
@@ -1418,6 +1426,18 @@ img {
     
     .mobile-only {
         display: inline;
+    }
+    
+    /* Menu料金表のスマホ対応 (上段コース名、下段金額) */
+    .menu-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-bottom: 10px;
+    }
+    
+    .menu-item-price {
+        font-size: 1.3rem;
     }
     
     /* Flow */
